@@ -1,52 +1,88 @@
-# 🍔 FoodExpress - Food Delivery & Restaurant Ordering Android App
+<div align="center">
 
-<p align="center">
-  <img src="app/src/main/res/drawable/restaurant.jpg" alt="FoodExpress Banner" width="400" style="border-radius: 12px;" />
-</p>
+# 🛵 FoodExpress
 
-<p align="center">
-  <a href="https://www.android.com/"><img src="https://img.shields.io/badge/Platform-Android-3DDC84.svg?style=flat&logo=android&logoColor=white" alt="Platform" /></a>
-  <a href="https://kotlinlang.org/"><img src="https://img.shields.io/badge/Language-Kotlin-7F52FF.svg?style=flat&logo=kotlin&logoColor=white" alt="Language" /></a>
-  <a href="https://developer.android.com/"><img src="https://img.shields.io/badge/Target%20SDK-35-blue.svg?style=flat" alt="Target SDK" /></a>
-  <a href="https://developer.android.com/"><img src="https://img.shields.io/badge/Min%20SDK-24-lightgrey.svg?style=flat" alt="Min SDK" /></a>
-  <a href="https://github.com/ibrohim2005rajabboyev/FoodExpress/stargazers"><img src="https://img.shields.io/github/stars/ibrohim2005rajabboyev/FoodExpress?style=flat" alt="Stars" /></a>
-  <a href="https://github.com/ibrohim2005rajabboyev/FoodExpress/network/members"><img src="https://img.shields.io/github/forks/ibrohim2005rajabboyev/FoodExpress?style=flat" alt="Forks" /></a>
-</p>
+### *Fast, intuitive, and modern on-demand food delivery Android client*
 
----
+[![Kotlin](https://img.shields.io/badge/Language-Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)](https://kotlinlang.org/)
+[![Android](https://img.shields.io/badge/Platform-Android_14_--_15-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://developer.android.com/)
+[![Jetpack Navigation](https://img.shields.io/badge/Architecture-Single_Activity-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://developer.android.com/guide/navigation)
 
-## 📌 Overview
+<br/>
 
-**FoodExpress** is a native Android food ordering and delivery application developed in Kotlin. The app provides a seamless digital dining experience, enabling users to explore local restaurants, browse popular dishes, manage cart orders with real-time price calculations, and navigate between screens using Android Jetpack Navigation.
+| 🍔 Signature Burgers | 🌯 Fresh Lavash / Wraps | 🌭 Street Hotdogs | 🏪 Partner Restaurants |
+| :---: | :---: | :---: | :---: |
+| <img src="app/src/main/res/drawable/gamburger1.jpg" width="160" style="border-radius:10px;" /> | <img src="app/src/main/res/drawable/lavash.jpg" width="160" style="border-radius:10px;" /> | <img src="app/src/main/res/drawable/hotdog3.jpg" width="160" style="border-radius:10px;" /> | <img src="app/src/main/res/drawable/restaurant.jpg" width="160" style="border-radius:10px;" /> |
+
+</div>
 
 ---
 
-## 📱 Key Features
+## 💡 About The Project
 
-- **🍔 Restaurant & Menu Exploration:** Browse top restaurants and popular categories including burgers, lavash, hotdogs, and combo meals.
-- **🏷️ Promotional Banner Slider:** Auto-scrolling promotion carousel highlighting daily discounts, combo packages, and special deals.
-- **🛒 Dynamic Cart & Checkout:** Real-time quantity controls (increment/decrement), total cost computation, and smooth checkout flow with payment options (Cash, Card).
-- **🗺️ Delivery Location & Map:** Integrated map fragment for delivery address selection, GPS coordinates, and route visualization.
-- **🔐 User Authentication:** Polished onboarding experience with Splash screen, Login (`SingActivity`), and New User Registration.
-- **⭐ Ratings & Customer Feedback:** Restaurant review screen featuring star ratings and feedback submission.
-- **🧭 Bottom Navigation:** Fluid tab switching between Home, Map, Cart, and Profile powered by Jetpack Navigation Component.
+**FoodExpress** is an Android food ordering application crafted in **Kotlin**. Designed to replicate modern food delivery services like DoorDash, Wolt, and Express24, it handles everything from restaurant discovery and promotional campaigns to cart price calculations and checkout payment flows.
+
+### 🔄 User Flow & Order Lifecycle
+
+```text
+  [ Splash Screen ]
+         │
+         ▼
+  [ Authentication ] ─── (Sign In / Register)
+         │
+         ▼
+  ┌────────────────────────────────────────────────────────┐
+  │                 Main Dashboard (Host)                  │
+  │                                                        │
+  │  [🏠 Home Feed]    [🗺️ Delivery Map]    [👤 Profile]   │
+  │    - Banner Slider   - GPS Location       - Settings   │
+  │    - Category Tabs   - Route Tracking                  │
+  │    - Dish Catalog                                      │
+  └──────────────────────────┬─────────────────────────────┘
+                             │
+                             ▼
+  ┌────────────────────────────────────────────────────────┐
+  │               Cart & Checkout Pipeline                 │
+  │                                                        │
+  │  [🛒 Cart Manager]       ──►  [💳 Checkout Screen]     │
+  │    - Dynamic Quantities         - Cash on Delivery     │
+  │    - Real-Time Subtotal         - Card Payment         │
+  └────────────────────────────────────────────────────────┘
+```
 
 ---
 
-## 🛠 Tech Stack & Libraries
+## ⚡ Core Application Modules
 
-| Component | Technology | Details |
-| :--- | :--- | :--- |
-| **Language** | [Kotlin](https://kotlinlang.org/) | Modern, concise, and memory-safe programming language |
-| **Platform** | [Android SDK](https://developer.android.com/) | Min SDK: 24 (Android 7.0), Target SDK: 35 |
-| **UI Framework** | Android XML + ViewBinding | Type-safe, boilerplate-free UI view binding |
-| **Navigation** | [Jetpack Navigation](https://developer.android.com/guide/navigation) | Single-activity multi-fragment navigation management |
-| **Components** | Google Material Design 3 | Cards, BottomNavigationView, Custom Badges, Buttons |
-| **Lists & Grids** | RecyclerView | Optimized multi-type adapters for products, categories & cart |
+### 1. 🍕 Discovery & Promotional Feed
+- **Banner Carousel (`SlideAdapter`):** Auto-scrolling hero banners featuring current deals and daily combos.
+- **Categorized Menus (`CategoryTabAdapter`):** Fast horizontal filtering by dish category (Burgers, Pizzas, Drinks, Combos).
+- **Restaurant Profiles (`RestaurantAdapter`):** Comprehensive restaurant information cards including delivery times and customer ratings.
+
+### 2. 🛒 Real-Time Cart & Checkout Engine
+- **Item Count Modifiers:** Intuitive quantity increments and decrements directly inside the cart items.
+- **Dynamic Price Engine:** Live total recalculation as items are adjusted, added, or removed.
+- **Dual Payment Options:** Supports both Cash on Delivery and Credit/Debit Card checkout modes.
+
+### 3. 🧭 Navigation & Architecture
+- **Single-Activity Architecture:** Centered around `MainActivity` hosting fragments through Android Jetpack's `main_navigation.xml`.
+- **Bottom Navigation Integration:** Frictionless switching across Home, Map, Cart, and Profile without reload latency.
+- **Type-Safe ViewBinding:** Eliminates `findViewById` bugs and enhances compile-time view safety.
 
 ---
 
-## 📂 Project Architecture
+## 🛠 Tech Stack Overview
+
+- **Core:** 100% Kotlin (JVM target 1.8)
+- **Min / Target SDK:** Android 7.0 (API 24) $\rightarrow$ Android 15 (API 35)
+- **UI & Layouts:** XML Layouts, Custom Shape Drawables, Vector Graphics, Material 3 Design
+- **Navigation:** Jetpack Navigation Component (Fragment-ktx, UI-ktx `2.7.6`)
+- **Data Display:** RecyclerView with specialized Custom Adapters & ViewHolders
+
+---
+
+<details>
+<summary><b>📂 Click to expand: Project Directory Hierarchy</b></summary>
 
 ```
 FoodExpress/
@@ -54,59 +90,55 @@ FoodExpress/
 │   ├── src/main/
 │   │   ├── java/com/example/foodexpress/
 │   │   │   ├── adapter/
-│   │   │   │   ├── CartProductAdapter.kt   # Cart items with quantity adjusters
-│   │   │   │   ├── CategoryAdapter.kt       # Horizontal food categories adapter
-│   │   │   │   ├── CategoryTabAdapter.kt    # Category tab selector adapter
-│   │   │   │   ├── ProductAdapter.kt        # Food menu product cards adapter
-│   │   │   │   ├── RestaurantAdapter.kt     # Featured restaurants adapter
-│   │   │   │   └── SlideAdapter.kt          # Promotional carousel slider adapter
+│   │   │   │   ├── CartProductAdapter.kt    # In-cart item modifiers
+│   │   │   │   ├── CategoryAdapter.kt        # Category grid cards
+│   │   │   │   ├── CategoryTabAdapter.kt     # Horizontal pill tabs
+│   │   │   │   ├── ProductAdapter.kt         # Menu item cards
+│   │   │   │   ├── RestaurantAdapter.kt      # Restaurant cards
+│   │   │   │   └── SlideAdapter.kt           # Header promotional carousel
 │   │   │   ├── model/
-│   │   │   │   ├── CategoryModel.kt         # Food category data entity
-│   │   │   │   ├── ProductModel.kt          # Product details, image & pricing model
-│   │   │   │   ├── RestaurantModel.kt       # Restaurant profile & rating model
-│   │   │   │   └── SlideModel.kt            # Banner promotional slide model
+│   │   │   │   ├── CategoryModel.kt
+│   │   │   │   ├── ProductModel.kt
+│   │   │   │   ├── RestaurantModel.kt
+│   │   │   │   └── SlideModel.kt
 │   │   │   └── screen/
-│   │   │       ├── auth/                    # Login (SingActivity) & Registration
-│   │   │       ├── main/                    # MainActivity host with BottomNav
-│   │   │       │   ├── cart/CartFragment.kt
-│   │   │       │   ├── main/MainFragment.kt
-│   │   │       │   ├── map/MapFragment.kt
-│   │   │       │   ├── order/checkout/CheckoutActivity.kt
-│   │   │       │   ├── profile/ProfileFragment.kt
-│   │   │       │   └── restaurant/
-│   │   │       │       ├── detail/RestaurantDetailActivity.kt
-│   │   │       │       └── feedback/FeedbackFragment.kt
-│   │   │       └── splash/SplashActivity.kt # App launch splash screen
-│   │   └── res/                             # Layouts, vector icons, navigation graphs
-│   └── build.gradle                         # App module dependencies
+│   │   │       ├── auth/                     # SingActivity & RegistrationActivity
+│   │   │       ├── main/
+│   │   │       │   ├── cart/                 # CartFragment
+│   │   │       │   ├── main/                 # MainFragment
+│   │   │       │   ├── map/                  # MapFragment
+│   │   │       │   ├── order/checkout/       # CheckoutActivity
+│   │   │       │   ├── profile/              # ProfileFragment
+│   │   │       │   └── restaurant/           # Detail & Feedback
+│   │   │       └── splash/SplashActivity.kt
+│   │   └── res/
+│   │       ├── drawable/                     # Food imagery, icons & gradient backgrounds
+│   │       ├── layout/                       # Screen and component layouts
+│   │       └── navigation/main_navigation.xml
+│   └── build.gradle
 └── settings.gradle
+```
+
+</details>
+
+---
+
+## 🚀 Quick Setup & Run
+
+```bash
+# 1. Clone repository
+git clone https://github.com/ibrohim2005rajabboyev/FoodExpress.git
+
+# 2. Navigate into project
+cd FoodExpress
+
+# 3. Open in Android Studio, allow Gradle sync, and run on device/emulator
 ```
 
 ---
 
-## 🚀 Getting Started
+## 👨‍💻 Developer
 
-Follow these steps to run the project locally:
-
-### Prerequisites:
-- **Android Studio** (Koala / Ladybug or newer recommended)
-- **JDK 17** (or JDK 11+)
-- Android device or Emulator running **Android 7.0 (API 24)** or higher
-
-### Installation:
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/ibrohim2005rajabboyev/FoodExpress.git
-   ```
-2. Open **Android Studio** and click **File > Open**, then select the cloned `FoodExpress` folder.
-3. Wait for Gradle to finish downloading dependencies (`Sync Project with Gradle Files`).
-4. Select your connected Android device or Emulator.
-5. Click **Run** (`Shift + F10`) to build and launch the application.
-
----
-
-## 👨‍💻 Author
-
-- **Ibrohimjon Rajabboyev**
-- **GitHub:** [@ibrohim2005rajabboyev](https://github.com/ibrohim2005rajabboyev)
-- **Bio:** Mobile App Developer • Android • Kotlin • Flutter • UI/UX
+**Ibrohimjon Rajabboyev**  
+*Mobile App Developer (Android • Kotlin • Flutter)*  
+🔗 [GitHub Profile](https://github.com/ibrohim2005rajabboyev)
