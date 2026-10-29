@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_kok_gradient"
+    tools:context=".screen.main.restaurant.detail.RestaurantDetailActivity">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical">
+
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center_vertical"
+          android:layout_margin="16dp"
+          android:orientation="horizontal">
+          <ImageView
+              android:layout_width="24dp"
+              android:layout_height="24dp"
+              android:src="@drawable/menu"/>
+          <ImageView
+              android:layout_width="0dp"
+              android:layout_height="30dp"
+              android:layout_weight="1"
+              android:src="@drawable/mcicon"/>
+          <ImageView
+              android:layout_width="24dp"
+              android:layout_height="24dp"
+              android:src="@drawable/profile"/>
+
+      </LinearLayout>
+
+      <androidx.core.widget.NestedScrollView
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:layout_weight="1">
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+              <androidx.cardview.widget.CardView
+                  android:layout_width="match_parent"
+                  android:layout_height="200dp"
+                  android:layout_margin="16dp"
+                  app:cardCornerRadius="20dp">
+
+                  <ImageView
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:scaleType="centerCrop"
+                      android:src="@drawable/restaurant" />
+
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_weight="1"
+                      android:text="Fast food"
+                      android:layout_margin="16dp"
+                      android:textColor="@color/black"
+                      android:layout_gravity="bottom"
+                      android:textSize="24sp"
+                      android:textStyle="bold"/>
+
+              </androidx.cardview.widget.CardView>
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  android:text="Address"
+                 android:layout_marginLeft="16dp"
+                  android:layout_marginRight="16dp"
+                  android:layout_marginTop="8dp"
+                  android:textColor="@color/black"
+                  android:layout_gravity="bottom"
+                  android:textSize="18sp"
+                  android:textStyle="bold"/>
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="8dp"
+                  android:layout_marginLeft="16dp"
+                  android:layout_marginRight="16dp"
+                  android:orientation="horizontal">
+                  <ImageView
+                      android:layout_width="18dp"
+                      android:layout_height="18dp"
+                      android:src="@drawable/location"
+                      app:tint="@color/siyohrang"/>
+                  <TextView
+                      android:layout_width="0dp"
+                      android:layout_weight="1"
+                      android:layout_height="wrap_content"
+                      android:layout_marginLeft="8dp"
+                      android:textSize="20sp"
+                      android:textColor="@color/black"
+                      android:text="Pop tumani, Sang qishlog'i, 40-uy"/>
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_marginLeft="8dp"
+                      android:textSize="16sp"
+                      android:textColor="@color/yashil"
+                      android:text="Open the map"/>
+
+
+              </LinearLayout>
+              <View
+                  android:layout_width="match_parent"
+                  android:layout_height="1dp"
+                  android:layout_marginTop="8dp"
+                  android:layout_marginLeft="16dp"
+                  android:layout_marginRight="16dp"
+                  android:background="@color/kulrang"/>
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  android:text="Distance"
+                  android:layout_marginLeft="16dp"
+                  android:layout_marginRight="16dp"
+                  android:layout_marginTop="8dp"
+                  android:textColor="@color/black"
+                  android:layout_gravity="bottom"
+                  android:textSize="18sp"
+                  android:textStyle="bold"/>
+
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="8dp"
+                  android:layout_marginLeft="16dp"
+                  android:layout_marginRight="16dp"
+                  android:orientation="horizontal">
+                  <ImageView
+                      android:layout_width="18dp"
+                      android:layout_height="18dp"
+                      android:src="@drawable/ic_route"
+                      app:tint="@color/siyohrang"/>
+
+                  <TextView
+                      android:layout_width="0dp"
+                      android:layout_height="wrap_content"
+                      android:layout_marginLeft="8dp"
+                      android:layout_weight="1"
+                      android:text="1.6 km"
+                      android:textColor="@color/black"
+                      android:textSize="20sp" />
+
+
+              </LinearLayout>
+              <View
+                  android:layout_width="match_parent"
+                  android:layout_height="1dp"
+                  android:layout_marginTop="8dp"
+                  android:layout_marginLeft="16dp"
+                  android:layout_marginRight="16dp"
+                  android:background="@color/kulrang"/>
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  android:text="Rating"
+                  android:layout_marginLeft="16dp"
+                  android:layout_marginRight="16dp"
+                  android:layout_marginTop="8dp"
+                  android:textColor="@color/black"
+                  android:layout_gravity="bottom"
+                  android:textSize="18sp"
+                  android:textStyle="bold"/>
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="8dp"
+                  android:layout_marginLeft="16dp"
+                  android:layout_marginRight="16dp"
+                  android:orientation="horizontal">
+                 <RatingBar
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     style="@style/Widget.AppCompat.RatingBar.Indicator"
+                     android:progressTint="@color/sariq"
+                     android:rating="3"/>
+
+                  <TextView
+                      android:layout_width="0dp"
+                      android:layout_weight="1"
+                      android:layout_height="wrap_content"
+                      android:layout_marginLeft="8dp"
+                      android:textSize="20sp"
+                      android:textColor="@color/yashil"
+                      android:text="4.5"/>
+
+              </LinearLayout>
+              <View
+                  android:layout_width="match_parent"
+                  android:layout_height="1dp"
+                  android:layout_marginTop="8dp"
+                  android:layout_marginLeft="16dp"
+                  android:layout_marginRight="16dp"
+                  android:background="@color/kulrang"/>
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  android:text="Contact"
+                  android:layout_marginLeft="16dp"
+                  android:layout_marginRight="16dp"
+                  android:layout_marginTop="8dp"
+                  android:textColor="@color/black"
+                  android:layout_gravity="bottom"
+                  android:textSize="18sp"
+                  android:textStyle="bold"/>
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="8dp"
+                  android:layout_marginLeft="16dp"
+                  android:layout_marginRight="16dp"
+                  android:orientation="horizontal">
+                  <ImageView
+                      android:layout_width="18dp"
+                      android:layout_height="18dp"
+                      android:src="@drawable/ic_phone"
+                      app:tint="@color/siyohrang"/>
+                  <TextView
+                      android:layout_width="0dp"
+                      android:layout_height="wrap_content"
+                      android:layout_marginLeft="8dp"
+                      android:layout_weight="1"
+                      android:text="+99890"
+                      android:textColor="@color/black"
+                      android:textSize="20sp" />
+
+              </LinearLayout>
+              <View
+                  android:layout_width="match_parent"
+                  android:layout_height="1dp"
+                  android:layout_marginTop="8dp"
+                  android:layout_marginLeft="16dp"
+                  android:layout_marginRight="16dp"
+                  android:background="@color/kulrang"/>
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="22dp"
+                  android:layout_gravity="bottom"
+                  android:layout_marginLeft="16dp"
+                  android:layout_marginTop="16dp"
+                  android:layout_marginRight="16dp"
+                  android:layout_weight="1"
+                  android:text="Foods"
+                  android:textColor="@color/black"
+                  android:textSize="18sp"
+                  android:textStyle="bold" />
+
+              <androidx.recyclerview.widget.RecyclerView
+                  android:id="@+id/recyclerCategories"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  tools:listitem="@layout/category_tab_item_layout"
+                  android:layout_marginTop="16dp"
+                  app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                  android:orientation="horizontal"/>
+
+              <androidx.recyclerview.widget.RecyclerView
+                  android:id="@+id/recyclerProducts"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"/>
+              <com.google.android.material.button.MaterialButton
+                  android:id="@+id/btnFeedback"
+                  android:layout_width="match_parent"
+                  android:layout_height="56dp"
+                 android:layout_margin="16dp"
+                  app:backgroundTint="#2E2E2E"
+                  android:text="Leave a review"
+                  android:textColor="@color/sariq"
+                  app:cornerRadius="10dp"/>
+
+
+          </LinearLayout>
+      </androidx.core.widget.NestedScrollView>
+  </LinearLayout>
+</FrameLayout>
